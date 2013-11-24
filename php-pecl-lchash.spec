@@ -5,17 +5,18 @@ Summary:	%{modname} - Libc Hash Interface
 Summary(pl.UTF-8):	%{modname} - interfejs tablic haszujących libc
 Name:		%{php_name}-pecl-%{modname}
 Version:	0.9.1
-Release:	1
+Release:	2
 License:	PHP
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 # Source0-md5:	1ad9261f2461db033423e797e67c301c
 URL:		http://pecl.php.net/package/lchash/
-BuildRequires:	libtool
 BuildRequires:	%{php_name}-devel >= 3:5.0.0
+BuildRequires:	libtool
 BuildRequires:	rpmbuild(macros) >= 1.650
 %{?requires_php_extension}
-Requires:	php-common >= 4:5.0.4
+Requires:	php(core) >= 5.0.4
+Provides:	php(%{modname}) = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
